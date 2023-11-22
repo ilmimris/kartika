@@ -1,0 +1,43 @@
+openapi: 3.0.0
+info:
+  title: Echo API
+  version: 1.0.0
+paths:
+  /echo:
+    get:
+      operationId: getEcho
+      summary: Echo endpoint
+      description: Returns the entire request
+      parameters:
+        - name: q
+          in: query
+          description: The string parameter
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    description: The response data
+                    properties:
+                      q:
+                        type: string
+                        description: The string parameter
+                    example: {
+                      "q": "Hello World"
+                    }
+                  statusCode:
+                    type: integer
+                    description: The response status code
+                    example: 200
+                  latency:
+                    type: integer
+                    description: The response latency in milliseconds
+                    example: 100

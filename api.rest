@@ -1,0 +1,2 @@
+### Get Echo
+GET http://localhost:8080/echo?q=hello+faris 
